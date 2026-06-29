@@ -1,8 +1,24 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { Routes } from '@angular/router';
 
-import { routes } from './app.routes';
+import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { AgregarAlumnoComponent } from './components/agregar-alumno/agregar-alumno.component';
+import { EditarAlumnoComponent } from './components/editar-alumno/editar-alumno.component';
 
-export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
-};
+export const routes: Routes = [
+
+  {
+    path:'',
+    component:AlumnosComponent
+  },
+
+  {
+    path:'agregar',
+    component:AgregarAlumnoComponent
+  },
+
+  {
+    path:'editar/:id',
+    component:EditarAlumnoComponent
+  }
+
+];
